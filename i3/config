@@ -199,13 +199,21 @@ bindsym ctrl+Shift+l exec "sleep 0.1 && i3lock --blur 5"
 #exec xrandr --auto --output HDMI-1 --mode 1920x1080 --above HDMI-2
 exec xrandr --output HDMI-0 --auto
 
-exec feh --bg-fill ~/.config/i3/wallpaper.png
+# exec feh --bg-fill ~/.config/i3/wallpaper.png
+exec feh --bg-fill ~/.config/i3/wallpaper-arch.png
 
 exec --no-startup-id dunst
 exec --no-startup-id picom
 exec --no-startup-id redshift
 exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+##############
+# Screenshot #
+##############
+
+# Select an area and interact with Flameshot
+bindsym Print exec --no-startup-id flameshot gui
 
 exec_always mkfifo /tmp/xobpipe && tail -f /tmp/xobpipe | xob -t 2170 & disown
 #exec ~/.i3/launch.sh
